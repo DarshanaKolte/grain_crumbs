@@ -33,7 +33,29 @@ function App(){
   <section className="badges" id="why">{[['Millet Flour Only',Wheat],['Jaggery Sweetened',Heart],['Low GI Spike',ShieldCheck],['Vegan & Veg Options',Leaf],['No Maida',Wheat],['No Refined Sugar',ShieldCheck],['No Preservatives',Leaf]].map(([t,Icon])=><motion.div whileHover={{y:-8}} className="badge" key={t}><Icon/><span>{t}</span></motion.div>)}</section>
   <section className="menuSec" id="menu"><p className="eyebrow">Millet-Based Brownies</p><h2>Brownie Menu</h2><div className="grid">{products.map(p=><motion.div className="card" whileHover={{y:-8}} key={p.id}><div className="prodImg" style={{backgroundImage:`url(${p.img})`}}></div><h3>{p.name}</h3><p>{p.desc}</p><div className="price">₹{p.price}</div><button onClick={()=>add(p.id)}>Add to Cart</button></motion.div>)}</div></section>
   <section className="split" id="gallery"><img src={orderPoster}/><div><p className="eyebrow">Signature Brand Promise</p><h2>Made with real ingredients. Baked with love.</h2><p>Use this website to show the menu, build trust, highlight healthy bakery features, collect orders and redirect customers directly to WhatsApp for final confirmation.</p><button onClick={order}>Start Order</button></div></section>
-  <section className="contact" id="contact"><img src={logo}/><h2>Order Fresh Bakes Today</h2><p>Brownies • Sponge Cakes • Cupcakes</p><div className="contactGrid"><a href="tel:+918208257574"><Phone/> +91 8208257574</a><a href="mailto:thegraincrumbs@gmail.com"><Mail/> thegraincrumbs@gmail.com</a><a href="https://instagram.com/graincrumbs"><Instagram/> @graincrumbs</a><a href="#"><Facebook/> Grain Crumbs</a></div></section>
+ <section className="contact" id="contact">
+  <img src={logo} />
+  <h2>Order Fresh Bakes Today</h2>
+  <p>Brownies • Sponge Cakes • Cupcakes</p>
+
+  <div className="contactGrid">
+    <a href="tel:+918208257574">
+      <Phone /> +91 8208257574
+    </a>
+
+    <a href="mailto:thegraincrumbs@gmail.com">
+      <Mail /> thegraincrumbs@gmail.com
+    </a>
+
+    <a href="https://instagram.com/graincrumbs" target="_blank">
+      <span>📸</span> @graincrumbs
+    </a>
+
+    <a href="#">
+      <span>f</span> Grain Crumbs
+    </a>
+  </div>
+</section>
   {open&&<div className="drawer"><div className="cart"><button className="close" onClick={()=>setOpen(false)}><X/></button><h2>Your Order</h2>{cartItems.length===0?<p>Your cart is empty.</p>:cartItems.map(i=><div className="cartItem" key={i.id}><b>{i.name}</b><span>₹{i.price*i.qty}</span><div><button onClick={()=>dec(i.id)}><Minus/></button>{i.qty}<button onClick={()=>add(i.id)}><Plus/></button><button onClick={()=>dec(i.id)}><Trash2/></button></div></div>)}<h3>Total: ₹{total}</h3><button className="checkout" onClick={order}>Checkout on WhatsApp</button></div></div>}
   <footer>© Grain Crumbs. Premium millet bakery website concept.</footer>
  </>

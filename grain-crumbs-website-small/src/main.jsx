@@ -1,7 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import { createRoot } from 'react-dom/client';
 import { motion } from 'framer-motion';
-import { Phone, Mail, Instagram, Facebook, ShoppingBag, Leaf, Wheat, Heart, ShieldCheck, Minus, Plus, Trash2, Menu as MenuIcon, X } from 'lucide-react';
+import { Phone, Mail, ShoppingBag, Leaf, Wheat, Heart, ShieldCheck, Minus, Plus, Trash2, Menu as MenuIcon, X } from "lucide-react";
 import './styles.css';
 import logo from './assets/logo.webp';
 import orderPoster from './assets/order-poster.webp';
